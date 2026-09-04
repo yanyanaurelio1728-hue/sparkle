@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sparkle &amp; Co | Residential &amp; Commercial Cleaning in Tampa, FL</title>
+<meta name="description" content="Sparkle & Co provides professional house, deep, move-in/out, recurring, office, commercial, and Airbnb cleaning throughout Tampa, FL and the greater Tampa Bay area. Get a free cleaning quote today.">
+<meta property="og:title" content="Sparkle & Co | Tampa Residential & Commercial Cleaning">
+<meta property="og:description" content="Come home to clean, without spending your day cleaning. Professional cleaning for Tampa homes and businesses.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,500&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CleaningService",
+  "name": "Sparkle & Co",
+  "image": "REPLACE_WITH_REAL_LOGO_URL",
+  "telephone": "(813) XXX-XXXX",
+  "email": "hello@sparkleandco.example",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tampa",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "areaServed": ["Tampa", "Brandon", "Riverview", "Clearwater", "St. Petersburg", "Carrollwood", "Westchase", "New Tampa", "South Tampa", "Temple Terrace"],
+  "url": "https://www.sparkleandco.example",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "REPLACE_WITH_REAL_RATING",
+    "reviewCount": "REPLACE_WITH_REAL_COUNT"
+  }
+}
+</script>
+<style>
+  /* ============ DESIGN TOKENS ============ */
+  :root{
+    --teal-900:#123832;
+    --teal-700:#1F5B4E;
+    --teal-600:#2B7462;
+    --mint-100:#E6F0EA;
+    --mint-050:#F3F8F4;
+    --cream:#FBF8F1;
+    --charcoal:#22282A;
+    --charcoal-60: rgba(34,40,42,.64);
+    --gold:#BD9640;
+    --gold-100:#F3E9D2;
+    --white:#FFFFFF;
+    --line: rgba(18,56,50,.14);
+    --radius-lg: 28px;
+    --radius-md: 16px;
+    --radius-sm: 10px;
+    --shadow-soft: 0 12px 32px rgba(18,56,50,.10);
+    --shadow-tight: 0 4px 14px rgba(18,56,50,.08);
+    --maxw: 1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Work Sans', sans-serif;
+    color:var(--charcoal);
+    background:var(--cream);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Lora', serif;
+    margin:0 0 .5em;
+    line-height:1.18;
+    font-weight:600;
+    color:var(--teal-900);
+  }
+  p{margin:0 0 1em; max-width:62ch;}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  section{padding:88px 0;}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+
+  /* buttons */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:15px 28px; border-radius:100px; font-weight:600; font-size:15.5px;
+    text-decoration:none; cursor:pointer; border:2px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    font-family:'Work Sans',sans-serif;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{ background:var(--gold); color:var(--teal-900); box-shadow:0 8px 20px rgba(189,150,64,.35);}
+  .btn-primary:hover{background:#CBA652;}
+  .btn-secondary{ background:transparent; color:var(--white); border-color:rgba(255,255,255,.55);}
+  .btn-secondary:hover{background:rgba(255,255,255,.12);}
+  .btn-outline{background:transparent; color:var(--teal-700); border-color:var(--teal-700);}
+  .btn-outline:hover{background:var(--teal-700); color:var(--white);}
+  .btn-block{width:100%;}
+
+  .eyebrow{
+    font-size:14px; color:var(--teal-600); font-weight:600; margin-bottom:10px; display:block;
+  }
+  .section-head{max-width:640px; margin:0 0 44px;}
+  .section-head.center{margin-left:auto; margin-right:auto; text-align:center;}
+
+  /* ============ NAV ============ */
+  header.site{
+    position:sticky; top:0; z-index:50; background:rgba(251,248,241,.92);
+    backdrop-filter: blur(8px); border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:var(--maxw); margin:0 auto;}
+  .logo{font-family:'Lora',serif; font-weight:600; font-size:21px; color:var(--teal-900); text-decoration:none; display:flex; align-items:center; gap:9px;}
+  .logo-mark{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--teal-600),var(--gold)); flex-shrink:0;}
+  nav.links{display:flex; gap:30px; list-style:none; margin:0; padding:0;}
+  nav.links a{text-decoration:none; font-size:15px; font-weight:500; color:var(--charcoal); position:relative;}
+  nav.links a:hover{color:var(--teal-700);}
+  .nav-right{display:flex; align-items:center; gap:14px;}
+  .call-link{font-weight:600; font-size:15px; color:var(--teal-900); text-decoration:none; display:none;}
+  .hamburger{display:none; background:none; border:none; cursor:pointer; padding:6px;}
+  .hamburger span{display:block; width:24px; height:2px; background:var(--teal-900); margin:5px 0;}
+  .mobile-menu{display:none; flex-direction:column; gap:2px; padding:8px 24px 20px; border-top:1px solid var(--line);}
+  .mobile-menu a{padding:12px 4px; text-decoration:none; color:var(--charcoal); font-weight:500; border-bottom:1px solid var(--line);}
+  .mobile-menu.open{display:flex;}
+
+  @media (max-width:920px){
+    nav.links{display:none;}
+    .hamburger{display:block;}
+    .nav-right .btn{display:none;}
+  }
+
+  /* sticky mobile CTA bar */
+  .mobile-cta-bar{
+    display:none; position:fixed; bottom:0; left:0; right:0; z-index:60;
+    background:var(--teal-900); padding:10px 14px; gap:10px;
+  }
+  .mobile-cta-bar a{flex:1; text-align:center; padding:13px 10px; border-radius:100px; font-weight:600; font-size:14.5px; text-decoration:none;}
+  .mobile-cta-bar .call{background:transparent; color:var(--white); border:2px solid rgba(255,255,255,.5);}
+  .mobile-cta-bar .quote{background:var(--gold); color:var(--teal-900);}
+  @media (max-width:768px){ .mobile-cta-bar{display:flex;} body{padding-bottom:74px;} }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative; background:var(--teal-900); color:var(--white);
+    overflow:hidden; padding:0;
+  }
+  .hero-grid{
+    max-width:var(--maxw); margin:0 auto; padding:90px 24px 0;
+    display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:end;
+  }
+  .hero-copy h1{color:var(--white); font-size:clamp(34px,4.6vw,58px); max-width:14ch;}
+  .hero-copy .lede{color:rgba(255,255,255,.82); font-size:18px; max-width:46ch;}
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin:26px 0 16px;}
+  .hero-reassure{font-size:13.5px; color:rgba(255,255,255,.65); display:flex; gap:18px; flex-wrap:wrap;}
+  .hero-photo-wrap{position:relative; align-self:end;}
+  .hero-photo{
+    border-radius:var(--radius-lg) var(--radius-lg) 0 0; overflow:hidden;
+    box-shadow:0 30px 60px rgba(0,0,0,.35);
+  }
+  .hero-photo img{width:100%; height:420px; object-fit:cover;}
+  .hero-badge{
+    position:absolute; left:-18px; bottom:36px; background:var(--white); color:var(--teal-900);
+    padding:14px 18px; border-radius:var(--radius-md); box-shadow:var(--shadow-soft);
+    font-size:14px; font-weight:600; max-width:190px;
+  }
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr; padding-top:48px;}
+    .hero-photo img{height:260px;}
+    .hero-badge{display:none;}
+  }
+  .wave-divider{display:block; width:100%; height:70px; margin-top:56px;}
+  @media (max-width:860px){.wave-divider{margin-top:32px; height:44px;}}
+
+  /* ============ TRUST BAR ============ */
+  .trust-bar{background:var(--mint-100); padding:26px 0;}
+  .trust-list{display:flex; flex-wrap:wrap; gap:28px; justify-content:center; list-style:none; margin:0; padding:0;}
+  .trust-list li{display:flex; align-items:center; gap:8px; font-size:14.5px; font-weight:500; color:var(--teal-900);}
+  .trust-list li svg{flex-shrink:0;}
+
+  /* ============ PROBLEM/BENEFIT ============ */
+  .split{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
+  .split img{border-radius:var(--radius-lg); width:100%; height:380px; object-fit:cover;}
+  @media (max-width:860px){ .split{grid-template-columns:1fr;} .split img{height:260px; order:-1;} }
+
+  /* ============ SERVICES ============ */
+  .services-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  @media (max-width:1020px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.services-grid{grid-template-columns:1fr;}}
+  .service-card{
+    background:var(--white); border-radius:var(--radius-md); overflow:hidden;
+    border:1px solid var(--line); display:flex; flex-direction:column;
+  }
+  .service-card img{height:150px; object-fit:cover; width:100%;}
+  .service-card .body{padding:20px; display:flex; flex-direction:column; gap:8px; flex:1;}
+  .service-card h3{font-size:18px; margin-bottom:2px;}
+  .service-card p{font-size:14.5px; color:var(--charcoal-60); margin-bottom:10px;}
+  .service-card .cta{margin-top:auto; font-weight:600; font-size:14.5px; color:var(--teal-700); text-decoration:none; display:inline-flex; align-items:center; gap:6px;}
+  .icon-chip{width:38px;height:38px;border-radius:10px; background:var(--mint-100); display:flex; align-items:center; justify-content:center; color:var(--teal-700); margin:-38px 0 6px 16px; position:relative; box-shadow:0 4px 10px rgba(18,56,50,.12); background:var(--white);}
+
+  .view-all-wrap{text-align:center; margin-top:34px;}
+
+  /* ============ INCLUDED TABS ============ */
+  .tabs-bar{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:26px;}
+  .tab-btn{
+    padding:10px 20px; border-radius:100px; border:1.5px solid var(--line); background:var(--white);
+    font-weight:600; font-size:14.5px; cursor:pointer; color:var(--charcoal);
+  }
+  .tab-btn.active{background:var(--teal-900); border-color:var(--teal-900); color:var(--white);}
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block;}
+  .checklist{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(2,1fr); gap:12px 26px;}
+  @media (max-width:560px){.checklist{grid-template-columns:1fr;}}
+  .checklist li{display:flex; gap:10px; font-size:15px; align-items:flex-start;}
+  .checklist li svg{flex-shrink:0; margin-top:3px; color:var(--teal-600);}
+  .addons-box{background:var(--mint-050); border:1px dashed var(--teal-600); border-radius:var(--radius-md); padding:26px; margin-top:34px;}
+  .addons-box h4{margin-bottom:10px;}
+  .chip-row{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0;}
+  .chip{background:var(--white); border:1px solid var(--line); padding:8px 14px; border-radius:100px; font-size:13.5px;}
+
+  /* ============ BEFORE/AFTER ============ */
+  .ba-card{background:var(--white); border-radius:var(--radius-md); border:1px solid var(--line); padding:16px;}
+  .ba-slider{position:relative; border-radius:var(--radius-sm); overflow:hidden; aspect-ratio:4/3; cursor:ew-resize; user-select:none;}
+  .ba-slider img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+  .ba-slider .after-img{clip-path:inset(0 0 0 50%);}
+  .ba-handle{position:absolute; top:0; bottom:0; left:50%; width:3px; background:var(--white); box-shadow:0 0 0 1px rgba(0,0,0,.1);}
+  .ba-handle::after{content:'⇔'; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:38px;height:38px;background:var(--white); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:16px; box-shadow:var(--shadow-tight); color:var(--teal-900);}
+  .ba-label{position:absolute; top:10px; font-size:11.5px; font-weight:700; padding:5px 10px; border-radius:6px; background:rgba(18,56,50,.75); color:#fff; letter-spacing:.02em;}
+  .ba-label.before{left:10px;} .ba-label.after{right:10px;}
+  .ba-caption{font-size:13px; color:var(--charcoal-60); margin:12px 4px 0;}
+  .ba-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media (max-width:860px){.ba-grid{grid-template-columns:1fr;}}
+
+  /* ============ WHY / BENEFIT CARDS ============ */
+  .benefit-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:18px;}
+  @media (max-width:1020px){.benefit-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.benefit-grid{grid-template-columns:1fr;}}
+  .benefit-card{background:var(--white); border:1px solid var(--line); border-radius:var(--radius-md); padding:26px 22px;}
+  .benefit-card svg{color:var(--gold); margin-bottom:14px;}
+  .benefit-card h3{font-size:17px;}
+  .benefit-card p{font-size:14px; color:var(--charcoal-60); margin-bottom:0;}
+
+  /* ============ HOW IT WORKS ============ */
+  .steps{display:flex; gap:0; position:relative;}
+  .step{flex:1; position:relative; padding:0 18px; text-align:left;}
+  .step .num{width:46px; height:46px; border-radius:50%; background:var(--teal-900); color:var(--white); display:flex; align-items:center; justify-content:center; font-family:'Lora',serif; font-size:18px; margin-bottom:16px;}
+  .step-line{position:absolute; top:23px; left:calc(50% + 23px); right:calc(-50% + 23px); height:2px; background:var(--line);}
+  .step:last-child .step-line{display:none;}
+  @media (max-width:860px){
+    .steps{flex-direction:column; gap:34px;}
+    .step-line{display:none;}
+  }
+
+  /* ============ REVIEWS ============ */
+  .rating-summary{display:flex; align-items:center; gap:16px; margin-bottom:34px; flex-wrap:wrap;}
+  .rating-summary .stars{color:var(--gold); font-size:22px; letter-spacing:2px;}
+  .rating-summary .num{font-family:'Lora',serif; font-size:22px; color:var(--teal-900);}
+  .rating-summary .meta{font-size:14px; color:var(--charcoal-60);}
+  .review-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media (max-width:920px){.review-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:640px){.review-grid{grid-template-columns:1fr;}}
+  .review-card{background:var(--white); border:1px solid var(--line); border-radius:var(--radius-md); padding:24px;}
+  .review-card .stars{color:var(--gold); font-size:15px; margin-bottom:12px; letter-spacing:2px;}
+  .review-card p{font-size:14.5px; font-style:italic; color:var(--charcoal); margin-bottom:14px;}
+  .review-card .who{font-size:13.5px; font-weight:600; color:var(--teal-900);}
+  .demo-tag{font-size:11px; color:var(--gold); background:var(--gold-100); padding:3px 8px; border-radius:5px; font-weight:700; letter-spacing:.02em;}
+
+  /* ============ RECURRING PLANS ============ */
+  .plans-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media (max-width:860px){.plans-grid{grid-template-columns:1fr;}}
+  .plan-card{background:var(--white); border:1px solid var(--line); border-radius:var(--radius-md); padding:30px; position:relative;}
+  .plan-card.popular{border-color:var(--gold); box-shadow:var(--shadow-soft);}
+  .plan-badge{position:absolute; top:-13px; left:26px; background:var(--gold); color:var(--teal-900); font-size:12px; font-weight:700; padding:5px 12px; border-radius:100px;}
+  .plan-card h3{font-size:19px;}
+  .plan-card p{font-size:14.5px; color:var(--charcoal-60);}
+
+  /* ============ SERVICE AREAS ============ */
+  .area-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:16px;}
+  @media (max-width:920px){.area-grid{grid-template-columns:repeat(3,1fr);}}
+  @media (max-width:560px){.area-grid{grid-template-columns:repeat(2,1fr);}}
+  .area-card{background:var(--white); border:1px solid var(--line); border-radius:var(--radius-sm); padding:16px 14px; font-weight:600; font-size:14.5px; text-align:center; color:var(--teal-900);}
+  .zip-check{display:flex; gap:10px; max-width:420px; margin:34px auto 0; flex-wrap:wrap;}
+  .zip-check input{flex:1; min-width:180px; padding:14px 18px; border-radius:100px; border:1.5px solid var(--line); font-size:15px; font-family:inherit;}
+
+  /* ============ FAQ ============ */
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{width:100%; text-align:left; background:none; border:none; padding:20px 4px; font-family:'Lora',serif; font-size:17px; color:var(--teal-900); font-weight:500; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px;}
+  .faq-q .plus{font-size:22px; color:var(--teal-600); transition:transform .2s ease; flex-shrink:0;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .25s ease; font-size:14.5px; color:var(--charcoal-60); padding:0 4px;}
+  .faq-item.open .faq-a{max-height:300px; padding-bottom:20px;}
+
+  /* ============ FINAL CTA ============ */
+  .final-cta{background:var(--teal-900); color:var(--white); border-radius:var(--radius-lg); padding:64px 40px; text-align:center;}
+  .final-cta h2{color:var(--white);}
+  .final-cta p{color:rgba(255,255,255,.8); margin:0 auto 26px;}
+  .final-cta .ctas{display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-bottom:18px;}
+  .final-cta .note{font-size:13.5px; color:rgba(255,255,255,.6);}
+
+  /* ============ QUOTE FORM ============ */
+  #quote{background:var(--mint-050);}
+  .quote-shell{max-width:720px; margin:0 auto; background:var(--white); border-radius:var(--radius-lg); box-shadow:var(--shadow-soft); padding:44px;}
+  @media (max-width:640px){.quote-shell{padding:28px 20px;}}
+  .progress-track{display:flex; gap:6px; margin-bottom:30px;}
+  .progress-track span{flex:1; height:5px; border-radius:4px; background:var(--line);}
+  .progress-track span.done{background:var(--teal-600);}
+  .form-step{display:none;}
+  .form-step.active{display:block;}
+  .field{margin-bottom:18px;}
+  .field label{display:block; font-size:14px; font-weight:600; margin-bottom:7px; color:var(--teal-900);}
+  .field input[type=text], .field input[type=email], .field input[type=tel], .field input[type=date], .field select, .field textarea{
+    width:100%; padding:13px 15px; border-radius:var(--radius-sm); border:1.5px solid var(--line); font-family:inherit; font-size:15px; background:var(--cream);
+  }
+  .field textarea{resize:vertical; min-height:90px;}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:520px){.field-row{grid-template-columns:1fr;}}
+  .option-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:10px;}
+  @media (max-width:520px){.option-grid{grid-template-columns:repeat(2,1fr);}}
+  .option-pill{border:1.5px solid var(--line); border-radius:var(--radius-sm); padding:12px 10px; text-align:center; font-size:13.5px; font-weight:600; cursor:pointer; background:var(--cream);}
+  .option-pill input{display:none;}
+  .option-pill.selected{border-color:var(--teal-700); background:var(--mint-100); color:var(--teal-900);}
+  .check-row{display:flex; align-items:center; gap:10px; padding:10px 0;}
+  .form-nav{display:flex; justify-content:space-between; margin-top:30px; gap:12px;}
+  .error-text{color:#B3413A; font-size:12.5px; margin-top:5px; display:none;}
+  .field.invalid input, .field.invalid select{border-color:#B3413A;}
+  .field.invalid .error-text{display:block;}
+  .form-success{text-align:center; padding:30px 0;}
+  .form-success svg{color:var(--teal-600); margin-bottom:14px;}
+  .required-note{font-size:12.5px; color:var(--charcoal-60); margin-top:-6px; margin-bottom:20px;}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--teal-900); color:rgba(255,255,255,.75); padding:70px 0 26px; font-size:14.5px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr 1fr; gap:36px; margin-bottom:50px;}
+  @media (max-width:920px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:520px){.footer-grid{grid-template-columns:1fr;}}
+  footer h4{color:var(--white); font-family:'Work Sans',sans-serif; font-size:14px; text-transform:none; margin-bottom:16px; font-weight:700;}
+  footer ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;}
+  footer a{color:rgba(255,255,255,.75); text-decoration:none;}
+  footer a:hover{color:var(--white);}
+  .footer-logo{color:var(--white); font-family:'Lora',serif; font-size:20px; font-weight:600; margin-bottom:14px; display:block;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.14); padding-top:22px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:13px; color:rgba(255,255,255,.55);}
+
+  /* generic utility */
+  .cite{font-size:11px; color:var(--charcoal-60); font-style:italic;}
+  .visually-hidden{position:absolute; width:1px;height:1px; overflow:hidden; clip:rect(0,0,0,0);}
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} html{scroll-behavior:auto;} }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site">
+  <div class="nav">
+    <a href="#home" class="logo"><span class="logo-mark"></span>Sparkle &amp; Co</a>
+    <ul class="links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#areas">Service Areas</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="call-link" href="tel:8135551234" style="display:none;">(813) XXX-XXXX</a>
+      <a href="#quote" class="btn btn-outline">Get Free Quote</a>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false" id="hamburgerBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#areas">Service Areas</a>
+    <a href="#contact">Contact</a>
+    <a href="#quote" class="btn btn-primary" style="margin-top:14px; text-align:center;">Get Free Quote</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home" style="padding-top:0;">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <h1>Come home to clean. Without spending your day cleaning.</h1>
+      <p class="lede">Professional home and commercial cleaning in Tampa, Florida for busy homeowners, families, professionals, property owners, and local businesses.</p>
+      <div class="hero-ctas">
+        <a href="#quote" class="btn btn-primary">Get My Free Quote</a>
+        <a href="tel:8135551234" class="btn btn-secondary">Call Now</a>
+      </div>
+      <div class="hero-reassure">
+        <span>Fast quote requests</span>
+        <span>Flexible cleaning options</span>
+        <span>Tampa-area service</span>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80" alt="Bright, freshly cleaned modern Tampa-style kitchen">
+      </div>
+      <div class="hero-badge">Trusted by Tampa homeowners &amp; businesses <!-- Demo copy: replace with real years-in-business or review count once available --></div>
+    </div>
+  </div>
+  <svg class="wave-divider" viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,40 C240,80 480,0 720,20 C960,40 1200,80 1440,30 L1440,70 L0,70 Z" fill="#FBF8F1"></path></svg>
+</section>
+
+<!-- ================= TRUST BAR ================= -->
+<div class="trust-bar">
+  <div class="wrap">
+    <ul class="trust-list">
+      <!-- Demo trust claims. Replace/add with real: insured, bonded, background-checked staff, satisfaction guarantee, years in business, Google rating -->
+      <li>✓ Local Tampa cleaning team</li>
+      <li>✓ Residential &amp; commercial cleaning</li>
+      <li>✓ Flexible cleaning options</li>
+      <li>✓ Easy quote requests</li>
+      <li>✓ Customer-focused service</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= PROBLEM / BENEFIT ================= -->
+<section>
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Why Sparkle &amp; Co</span>
+      <h2>You have better things to do than spend your weekend cleaning.</h2>
+      <p>Between work, family, errands, and everything else life throws at you, keeping your home consistently clean can feel like another full-time job.</p>
+      <p>Sparkle &amp; Co helps Tampa homeowners take cleaning off their to-do list so they can come home to a fresh, comfortable space they actually have time to enjoy.</p>
+      <a href="#quote" class="btn btn-primary">Get My Cleaning Quote</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Family relaxing in a clean, sunlit Tampa living room">
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" style="background:var(--mint-050);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Our Services</span>
+      <h2>Cleaning services built around your home, schedule &amp; lifestyle</h2>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=500&q=70" alt="Cleaner wiping down a Tampa kitchen countertop">
+        <div class="body">
+          <h3>House Cleaning</h3>
+          <p>Keep your home fresh and comfortable with dependable scheduled cleaning.</p>
+          <a class="cta" href="#quote">Explore House Cleaning →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=500&q=70" alt="Deep cleaning of bathroom tile and grout">
+        <div class="body">
+          <h3>Deep Cleaning</h3>
+          <p>A detailed top-to-bottom clean for homes that need extra attention.</p>
+          <a class="cta" href="#quote">Get a Deep Cleaning Quote →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=500&q=70" alt="Empty moving boxes in a clean, ready-to-move-into home">
+        <div class="body">
+          <h3>Move-In / Move-Out Cleaning</h3>
+          <p>Take cleaning off your moving checklist and leave the property ready for what comes next.</p>
+          <a class="cta" href="#quote">Request Moving Cleaning →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=500&q=70" alt="Calendar and cleaning supplies representing recurring cleaning schedules">
+        <div class="body">
+          <h3>Recurring Cleaning</h3>
+          <p>Weekly, biweekly, and monthly cleaning designed to keep your home consistently fresh.</p>
+          <a class="cta" href="#quote">View Recurring Options →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500&q=70" alt="Clean, organized modern office space">
+        <div class="body">
+          <h3>Office Cleaning</h3>
+          <p>Keep your workplace professional, hygienic, and welcoming.</p>
+          <a class="cta" href="#quote">Get Office Cleaning Pricing →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=500&q=70" alt="Commercial cleaning team working in a retail space">
+        <div class="body">
+          <h3>Commercial Cleaning</h3>
+          <p>Professional cleaning solutions for local Tampa businesses.</p>
+          <a class="cta" href="#quote">Request Commercial Quote →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=500&q=70" alt="Freshly made bed in a bright vacation rental bedroom">
+        <div class="body">
+          <h3>Airbnb / Vacation Rental Cleaning</h3>
+          <p>Guest-ready cleaning designed for vacation rental turnovers.</p>
+          <a class="cta" href="#quote">Get Airbnb Cleaning Quote →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1610557892470-55d587fb31c8?auto=format&fit=crop&w=500&q=70" alt="Cleaner vacuuming a bright living room rug">
+        <div class="body">
+          <h3>Custom &amp; Add-On Cleaning</h3>
+          <p>Not sure what you need? Tell us about your space and we'll help you choose.</p>
+          <a class="cta" href="#quote">Build My Cleaning Quote →</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="view-all-wrap"><a href="#quote" class="btn btn-outline">View All Services</a></div>
+  </div>
+</section>
+
+<!-- ================= WHAT'S INCLUDED ================= -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What's Included</span>
+      <h2>Know exactly what you're getting</h2>
+      <p>Cleaning should never feel vague. Here's an example of what a standard Sparkle &amp; Co cleaning may include.</p>
+    </div>
+    <div class="tabs-bar" role="tablist">
+      <button class="tab-btn active" data-tab="kitchen">Kitchen</button>
+      <button class="tab-btn" data-tab="bathroom">Bathroom</button>
+      <button class="tab-btn" data-tab="bedrooms">Bedrooms</button>
+      <button class="tab-btn" data-tab="living">Living Areas</button>
+    </div>
+
+    <div class="tab-panel active" id="tab-kitchen">
+      <ul class="checklist">
+        <li>✓ Wipe countertops</li><li>✓ Clean sinks</li>
+        <li>✓ Wipe appliance exteriors</li><li>✓ Clean stovetop</li>
+        <li>✓ Empty trash</li><li>✓ Sweep or vacuum</li>
+        <li>✓ Mop floors</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="tab-bathroom">
+      <ul class="checklist">
+        <li>✓ Clean toilet</li><li>✓ Clean shower or bathtub</li>
+        <li>✓ Clean mirrors</li><li>✓ Wipe countertops</li>
+        <li>✓ Clean sinks</li><li>✓ Empty trash</li>
+        <li>✓ Mop floors</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="tab-bedrooms">
+      <ul class="checklist">
+        <li>✓ Dust reachable surfaces</li><li>✓ Make beds</li>
+        <li>✓ Vacuum floors</li><li>✓ Empty trash</li>
+        <li>✓ Wipe reachable surfaces</li>
+      </ul>
+    </div>
+    <div class="tab-panel" id="tab-living">
+      <ul class="checklist">
+        <li>✓ Dust furniture</li><li>✓ Vacuum carpets</li>
+        <li>✓ Mop hard flooring</li><li>✓ Wipe surfaces</li>
+        <li>✓ Empty trash</li>
+      </ul>
+    </div>
+
+    <div class="addons-box">
+      <h4>Need something extra?</h4>
+      <div class="chip-row">
+        <span class="chip">Inside refrigerator</span>
+        <span class="chip">Inside oven</span>
+        <span class="chip">Interior windows</span>
+        <span class="chip">Baseboards</span>
+        <span class="chip">Cabinet interiors</span>
+        <span class="chip">Laundry</span>
+        <span class="chip">Bed linen changes</span>
+      </div>
+      <p style="font-size:13.5px; margin-bottom:16px;">Exact inclusions may vary depending on the service you select.</p>
+      <a href="#quote" class="btn btn-primary">Build My Cleaning Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VISUAL PROOF (BEFORE/AFTER) ================= -->
+<section style="background:var(--mint-050);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Visual Proof</span>
+      <h2>See the difference</h2>
+      <p style="margin:0 auto;">Drag the slider to compare. <em>Example service photos shown for demo purposes — replace with real Sparkle &amp; Co client before/after photos.</em></p>
+    </div>
+    <div class="ba-grid">
+
+      <div class="ba-card">
+        <div class="ba-slider" data-ba>
+          <img class="before-img" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=700&q=70" alt="Kitchen before professional cleaning, demo photo">
+          <img class="after-img" src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=700&q=70" alt="Kitchen after professional cleaning, demo photo">
+          <span class="ba-label before">Before</span>
+          <span class="ba-label after">After</span>
+          <div class="ba-handle"></div>
+        </div>
+        <p class="ba-caption">Kitchen — example service photo, demo only.</p>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-slider" data-ba>
+          <img class="before-img" src="https://images.unsplash.com/photo-1615529162924-f8605388461d?auto=format&fit=crop&w=700&q=70" alt="Bathroom before professional cleaning, demo photo">
+          <img class="after-img" src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=700&q=70" alt="Bathroom after professional cleaning, demo photo">
+          <span class="ba-label before">Before</span>
+          <span class="ba-label after">After</span>
+          <div class="ba-handle"></div>
+        </div>
+        <p class="ba-caption">Bathroom — example service photo, demo only.</p>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-slider" data-ba>
+          <img class="before-img" src="https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?auto=format&fit=crop&w=700&q=70" alt="Living room before professional cleaning, demo photo">
+          <img class="after-img" src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=700&q=70" alt="Living room after professional cleaning, demo photo">
+          <span class="ba-label before">Before</span>
+          <span class="ba-label after">After</span>
+          <div class="ba-handle"></div>
+        </div>
+        <p class="ba-caption">Living room — example service photo, demo only.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Why Sparkle &amp; Co</span>
+      <h2>Cleaning should make your life easier, not more complicated.</h2>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+        <h3>Reliable service</h3>
+        <p>A professional cleaning experience designed around clear expectations and dependable scheduling.</p>
+      </div>
+      <div class="benefit-card">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+        <h3>Designed around you</h3>
+        <p>Choose the service and frequency that fits your home and lifestyle.</p>
+      </div>
+      <div class="benefit-card">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+        <h3>Clear communication</h3>
+        <p>Know what happens next from quote request to completed cleaning.</p>
+      </div>
+      <div class="benefit-card">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.5 6H21l-5 4 2 7-6-4-6 4 2-7-5-4h6.5z"/></svg>
+        <h3>Detail-focused</h3>
+        <p>We focus on the areas that make your home feel genuinely fresh.</p>
+      </div>
+      <div class="benefit-card">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.2-9.5-9.4C1 8 2.7 4.6 6 4a5 5 0 016 2.1A5 5 0 0118 4c3.3.6 5 4 3.5 7.6C19 15.8 12 21 12 21z"/></svg>
+        <h3>Local Tampa service</h3>
+        <p>Cleaning designed for homeowners and businesses throughout Tampa and nearby communities.</p>
+      </div>
+    </div>
+    <div class="view-all-wrap"><a href="#quote" class="btn btn-primary">Get My Free Quote</a></div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section style="background:var(--mint-050);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Getting Started</span>
+      <h2>A cleaner home in 3 simple steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div class="step-line"></div>
+        <h3 style="font-size:18px;">Request your quote</h3>
+        <p style="font-size:14.5px;">Tell us about your property, service, and cleaning needs.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div class="step-line"></div>
+        <h3 style="font-size:18px;">Choose your cleaning</h3>
+        <p style="font-size:14.5px;">We'll review your request and help determine the right cleaning option and schedule.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3 style="font-size:18px;">Enjoy your clean space</h3>
+        <p style="font-size:14.5px;">Let the cleaning team handle the work while you enjoy the result.</p>
+      </div>
+    </div>
+    <div class="view-all-wrap"><a href="#quote" class="btn btn-primary">Get Started</a></div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Customer Reviews</span>
+      <h2>Loved by Tampa homeowners</h2>
+    </div>
+    <div class="rating-summary">
+      <span class="stars">★★★★★</span>
+      <span class="num">0.0</span>
+      <span class="meta">from 0 Google reviews — <em>REPLACE_WITH_REAL_RATING_AND_COUNT</em></span>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <span class="demo-tag">Demo testimonial</span>
+        <p>"Sample testimonial — replace with actual Sparkle &amp; Co Google review."</p>
+        <div class="who">— Customer Name, Tampa</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <span class="demo-tag">Demo testimonial</span>
+        <p>"Sample testimonial — replace with actual Sparkle &amp; Co Google review."</p>
+        <div class="who">— Customer Name, South Tampa</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <span class="demo-tag">Demo testimonial</span>
+        <p>"Sample testimonial — replace with actual Sparkle &amp; Co Google review."</p>
+        <div class="who">— Customer Name, Brandon</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <span class="demo-tag">Demo testimonial</span>
+        <p>"Sample testimonial — replace with actual Sparkle &amp; Co Google review."</p>
+        <div class="who">— Customer Name, Clearwater</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <span class="demo-tag">Demo testimonial</span>
+        <p>"Sample testimonial — replace with actual Sparkle &amp; Co Google review."</p>
+        <div class="who">— Customer Name, Riverview</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <span class="demo-tag">Demo testimonial</span>
+        <p>"Sample testimonial — replace with actual Sparkle &amp; Co Google review."</p>
+        <div class="who">— Customer Name, Westchase</div>
+      </div>
+    </div>
+    <div class="view-all-wrap"><a href="#" class="btn btn-outline" id="googleReviewsLink">Read Our Reviews</a></div>
+  </div>
+</section>
+
+<!-- ================= RECURRING CLEANING ================= -->
+<section style="background:var(--mint-050);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Recurring Cleaning</span>
+      <h2>Stop starting over with a messy house</h2>
+      <p style="margin:0 auto;">Keep your home consistently fresh with recurring cleaning designed around your schedule.</p>
+    </div>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <h3>Weekly Cleaning</h3>
+        <p>For busy households that want consistent upkeep. Our most frequent option.</p>
+        <a href="#quote" class="btn btn-outline btn-block">Select Weekly</a>
+      </div>
+      <div class="plan-card popular">
+        <span class="plan-badge">Popular</span>
+        <h3>Biweekly Cleaning</h3>
+        <p>A popular balance between convenience and affordability.</p>
+        <a href="#quote" class="btn btn-primary btn-block">Select Biweekly</a>
+      </div>
+      <div class="plan-card">
+        <h3>Monthly Cleaning</h3>
+        <p>Professional help to keep your home maintained throughout the month.</p>
+        <a href="#quote" class="btn btn-outline btn-block">Select Monthly</a>
+      </div>
+    </div>
+    <div class="view-all-wrap"><a href="#quote" class="btn btn-primary">See Recurring Cleaning Options</a></div>
+  </div>
+</section>
+
+<!-- ================= SERVICE AREAS ================= -->
+<section id="areas">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Service Areas</span>
+      <h2>Professional cleaning across Tampa Bay</h2>
+      <p style="margin:0 auto;">Sparkle &amp; Co provides cleaning services throughout Tampa and surrounding communities. Coverage is reviewed on an ongoing basis.</p>
+    </div>
+    <div class="area-grid">
+      <div class="area-card">Tampa</div>
+      <div class="area-card">South Tampa</div>
+      <div class="area-card">Westchase</div>
+      <div class="area-card">Carrollwood</div>
+      <div class="area-card">New Tampa</div>
+      <div class="area-card">Temple Terrace</div>
+      <div class="area-card">Brandon</div>
+      <div class="area-card">Riverview</div>
+      <div class="area-card">Clearwater</div>
+      <div class="area-card">St. Petersburg</div>
+    </div>
+    <form class="zip-check" id="zipForm">
+      <label for="zipInput" class="visually-hidden">Enter your ZIP code</label>
+      <input type="text" id="zipInput" inputmode="numeric" placeholder="Enter your ZIP code" required>
+      <button type="submit" class="btn btn-primary">Check Service Availability</button>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section style="background:var(--mint-050);">
+  <div class="wrap" style="max-width:820px;">
+    <div class="section-head center">
+      <span class="eyebrow">Common Questions</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div id="faqList">
+
+      <div class="faq-item open">
+        <button class="faq-q" aria-expanded="true">How much does house cleaning cost?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Pricing depends on property size, current condition, cleaning type, requested add-ons, and frequency. Request a free quote so Sparkle &amp; Co can provide pricing based on your specific cleaning needs.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do I need to provide cleaning supplies?<span class="plus">+</span></button>
+        <div class="faq-a"><p><em>Editable company policy — add Sparkle &amp; Co's actual supply policy here before launch.</em></p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do I need to be home during the cleaning?<span class="plus">+</span></button>
+        <div class="faq-a"><p><em>Editable company answer — add Sparkle &amp; Co's actual access/entry policy here before launch.</em></p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do you offer recurring cleaning?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes. Weekly, biweekly, and monthly cleaning options can be requested.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What areas do you serve?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Sparkle &amp; Co serves Tampa and selected surrounding Tampa Bay communities. Submit your ZIP code to confirm availability.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How long does cleaning take?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Cleaning time varies based on property size, condition, service selected, and number of cleaners.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can I request additional services?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes. Additional cleaning needs can be included when requesting a quote.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do you clean offices and commercial properties?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes. Sparkle &amp; Co offers residential, office, and commercial cleaning options.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What happens after I request a quote?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Sparkle &amp; Co reviews your property information and cleaning needs, then contacts you regarding availability and pricing.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section>
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>Ready to come home to clean?</h2>
+      <p>Let Sparkle &amp; Co take cleaning off your to-do list.</p>
+      <div class="ctas">
+        <a href="#quote" class="btn btn-primary">Get My Free Quote</a>
+        <a href="tel:8135551234" class="btn btn-secondary">Call Now</a>
+      </div>
+      <div class="note">Serving Tampa &amp; surrounding Tampa Bay communities.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUOTE FORM ================= -->
+<section id="quote">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Free Quote</span>
+      <h2>Get your free cleaning quote</h2>
+      <p style="margin:0 auto;">Tell us about your property and cleaning needs. We'll review your request and contact you with availability and pricing.</p>
+    </div>
+
+    <div class="quote-shell">
+      <div class="progress-track" id="progressTrack"></div>
+
+      <form id="quoteForm" novalidate>
+
+        <!-- STEP 1 -->
+        <div class="form-step active" data-step="1">
+          <h3 style="font-size:19px;">Contact information</h3>
+          <div class="field" data-field="fullName">
+            <label for="fullName">Full name *</label>
+            <input type="text" id="fullName" name="fullName">
+            <div class="error-text">Please enter your full name.</div>
+          </div>
+          <div class="field-row">
+            <div class="field" data-field="email">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email">
+              <div class="error-text">Please enter a valid email.</div>
+            </div>
+            <div class="field" data-field="phone">
+              <label for="phone">Phone *</label>
+              <input type="tel" id="phone" name="phone">
+              <div class="error-text">Please enter your phone number.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="form-step" data-step="2">
+          <h3 style="font-size:19px;">Property information</h3>
+          <div class="field" data-field="address">
+            <label for="address">Address / ZIP code *</label>
+            <input type="text" id="address" name="address">
+            <div class="error-text">Please enter your address or ZIP code.</div>
+          </div>
+          <div class="field">
+            <label for="propertyType">Property type</label>
+            <select id="propertyType" name="propertyType">
+              <option>House</option><option>Apartment</option><option>Condo</option>
+              <option>Office</option><option>Commercial Property</option>
+              <option>Vacation Rental</option><option>Other</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="bedrooms">Bedrooms</label>
+              <select id="bedrooms" name="bedrooms">
+                <option>Studio</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="bathrooms">Bathrooms</label>
+              <select id="bathrooms" name="bathrooms">
+                <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="sqft">Approximate property size (optional)</label>
+            <input type="text" id="sqft" name="sqft" placeholder="e.g. 1,800 sq ft">
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="form-step" data-step="3">
+          <h3 style="font-size:19px;">Cleaning needed</h3>
+          <div class="field">
+            <label>Select service</label>
+            <div class="option-grid" data-radio-group="service">
+              <label class="option-pill"><input type="radio" name="service" value="Regular House Cleaning" checked>Regular House</label>
+              <label class="option-pill"><input type="radio" name="service" value="Deep Cleaning">Deep Cleaning</label>
+              <label class="option-pill"><input type="radio" name="service" value="Move-In Cleaning">Move-In</label>
+              <label class="option-pill"><input type="radio" name="service" value="Move-Out Cleaning">Move-Out</label>
+              <label class="option-pill"><input type="radio" name="service" value="Recurring Cleaning">Recurring</label>
+              <label class="option-pill"><input type="radio" name="service" value="Office Cleaning">Office</label>
+              <label class="option-pill"><input type="radio" name="service" value="Commercial Cleaning">Commercial</label>
+              <label class="option-pill"><input type="radio" name="service" value="Airbnb Cleaning">Airbnb</label>
+              <label class="option-pill"><input type="radio" name="service" value="Not Sure">Not Sure</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="form-step" data-step="4">
+          <h3 style="font-size:19px;">Frequency</h3>
+          <div class="option-grid" data-radio-group="frequency">
+            <label class="option-pill"><input type="radio" name="frequency" value="One Time" checked>One Time</label>
+            <label class="option-pill"><input type="radio" name="frequency" value="Weekly">Weekly</label>
+            <label class="option-pill"><input type="radio" name="frequency" value="Every 2 Weeks">Every 2 Weeks</label>
+            <label class="option-pill"><input type="radio" name="frequency" value="Monthly">Monthly</label>
+            <label class="option-pill"><input type="radio" name="frequency" value="Not Sure">Not Sure</label>
+          </div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="form-step" data-step="5">
+          <h3 style="font-size:19px;">Timing</h3>
+          <div class="field">
+            <label for="prefDate">Preferred cleaning date</label>
+            <input type="date" id="prefDate" name="prefDate">
+          </div>
+          <div class="field">
+            <label>Preferred time</label>
+            <div class="option-grid" data-radio-group="time">
+              <label class="option-pill"><input type="radio" name="time" value="Morning" checked>Morning</label>
+              <label class="option-pill"><input type="radio" name="time" value="Afternoon">Afternoon</label>
+              <label class="option-pill"><input type="radio" name="time" value="Flexible">Flexible</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 6 -->
+        <div class="form-step" data-step="6">
+          <h3 style="font-size:19px;">Additional services</h3>
+          <div class="check-row"><input type="checkbox" id="ao1" name="addons" value="Inside refrigerator"><label for="ao1">Inside refrigerator</label></div>
+          <div class="check-row"><input type="checkbox" id="ao2" name="addons" value="Inside oven"><label for="ao2">Inside oven</label></div>
+          <div class="check-row"><input type="checkbox" id="ao3" name="addons" value="Interior windows"><label for="ao3">Interior windows</label></div>
+          <div class="check-row"><input type="checkbox" id="ao4" name="addons" value="Baseboards"><label for="ao4">Baseboards</label></div>
+          <div class="check-row"><input type="checkbox" id="ao5" name="addons" value="Cabinet interiors"><label for="ao5">Cabinet interiors</label></div>
+          <div class="check-row"><input type="checkbox" id="ao6" name="addons" value="Laundry"><label for="ao6">Laundry</label></div>
+          <div class="check-row"><input type="checkbox" id="ao7" name="addons" value="Linen change"><label for="ao7">Linen change</label></div>
+        </div>
+
+        <!-- STEP 7 -->
+        <div class="form-step" data-step="7">
+          <h3 style="font-size:19px;">Anything else we should know?</h3>
+          <div class="field">
+            <label for="notes">Additional notes (optional)</label>
+            <textarea id="notes" name="notes" placeholder="Pets, gate codes, areas to focus on, etc."></textarea>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="btn btn-outline" id="prevBtn" style="visibility:hidden;">Back</button>
+          <button type="button" class="btn btn-primary" id="nextBtn">Continue</button>
+          <button type="submit" class="btn btn-primary" id="submitBtn" style="display:none;">Get My Free Quote</button>
+        </div>
+        <div class="required-note" style="margin-top:16px;">No obligation. Sparkle &amp; Co will contact you regarding availability and pricing.</div>
+      </form>
+
+      <div class="form-success" id="formSuccess" style="display:none;">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+        <h3>Quote request received</h3>
+        <p style="margin:0 auto;">Thanks — Sparkle &amp; Co will review your request and reach out shortly about availability and pricing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" style="background:var(--mint-050);">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Contact</span>
+      <h2>Let's talk about your cleaning needs</h2>
+      <p><strong>Phone:</strong> <a href="tel:8135551234">(813) XXX-XXXX</a><br>
+      <strong>Email:</strong> <a href="mailto:hello@sparkleandco.example">hello@sparkleandco.example</a><br>
+      <strong>Hours:</strong> Mon–Sat, 8:00 AM – 6:00 PM <em>(placeholder — confirm real hours)</em><br>
+      <strong>Service area:</strong> Tampa &amp; surrounding Tampa Bay communities</p>
+      <a href="#quote" class="btn btn-primary">Get Cleaning Quote</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?auto=format&fit=crop&w=900&q=80" alt="Professional cleaner smiling in a bright Tampa home">
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <span class="footer-logo">Sparkle &amp; Co</span>
+        <p style="color:rgba(255,255,255,.65); font-size:14px; max-width:32ch;">Professional residential and commercial cleaning serving Tampa and surrounding Tampa Bay communities.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">House Cleaning</a></li>
+          <li><a href="#services">Deep Cleaning</a></li>
+          <li><a href="#services">Move-In Cleaning</a></li>
+          <li><a href="#services">Move-Out Cleaning</a></li>
+          <li><a href="#services">Recurring Cleaning</a></li>
+          <li><a href="#services">Office Cleaning</a></li>
+          <li><a href="#services">Commercial Cleaning</a></li>
+          <li><a href="#services">Airbnb Cleaning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#areas">Service Areas</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#quote">Request a Quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:8135551234">(813) XXX-XXXX</a></li>
+          <li><a href="mailto:hello@sparkleandco.example">hello@sparkleandco.example</a></li>
+          <li>Tampa, FL</li>
+          <li>Mon–Sat, 8am–6pm <em>(placeholder)</em></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <ul>
+          <li><a href="#" id="fbLink">Facebook</a></li>
+          <li><a href="#" id="igLink">Instagram</a></li>
+          <li><a href="#" id="gbpLink">Google Business Profile</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Sparkle &amp; Co. All rights reserved. <em>Demo site — not a real business.</em></span>
+      <span><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= STICKY MOBILE CTA BAR ================= -->
+<div class="mobile-cta-bar">
+  <a class="call" href="tel:8135551234">Call Now</a>
+  <a class="quote" href="#quote">Get Free Quote</a>
+</div>
+
+<script>
+/* =========================================================
+   CENTRAL BUSINESS CONFIG
+   Edit this object to re-skin the site for a different
+   cleaning company. Nothing business-specific should be
+   hardcoded elsewhere in this file's JS.
+========================================================= */
+const BUSINESS_CONFIG = {
+  name: "Sparkle & Co",
+  phone: "(813) XXX-XXXX",
+  phoneHref: "tel:8135551234",
+  email: "hello@sparkleandco.example",
+  hours: "Mon–Sat, 8:00 AM – 6:00 PM (placeholder — confirm real hours)",
+  serviceAreas: ["Tampa","South Tampa","Westchase","Carrollwood","New Tampa","Temple Terrace","Brandon","Riverview","Clearwater","St. Petersburg"],
+  social: {
+    facebook: "https://facebook.com/REPLACE_ME",
+    instagram: "https://instagram.com/REPLACE_ME",
+    googleBusinessProfile: "https://g.page/REPLACE_ME"
+  },
+  googleReviews: {
+    url: "https://g.page/REPLACE_ME/review",
+    rating: "REPLACE_WITH_REAL_RATING",
+    reviewCount: "REPLACE_WITH_REAL_COUNT"
+  }
+};
+
+// Wire config values into the DOM
+document.getElementById("fbLink").href = BUSINESS_CONFIG.social.facebook;
+document.getElementById("igLink").href = BUSINESS_CONFIG.social.instagram;
+document.getElementById("gbpLink").href = BUSINESS_CONFIG.social.googleBusinessProfile;
+document.getElementById("googleReviewsLink").href = BUSINESS_CONFIG.googleReviews.url;
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* Mobile menu toggle */
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+hamburgerBtn.addEventListener("click", () => {
+  const open = mobileMenu.classList.toggle("open");
+  hamburgerBtn.setAttribute("aria-expanded", open);
+});
+mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+  mobileMenu.classList.remove("open");
+  hamburgerBtn.setAttribute("aria-expanded", "false");
+}));
+
+/* Tabs */
+document.querySelectorAll(".tab-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".tab-panel").forEach(p => p.classList.remove("active"));
+    btn.classList.add("active");
+    document.getElementById("tab-" + btn.dataset.tab).classList.add("active");
+  });
+});
+
+/* FAQ accordion */
+document.querySelectorAll(".faq-q").forEach(q => {
+  q.addEventListener("click", () => {
+    const item = q.closest(".faq-item");
+    const isOpen = item.classList.contains("open");
+    document.querySelectorAll(".faq-item").forEach(i => { i.classList.remove("open"); i.querySelector(".faq-q").setAttribute("aria-expanded","false"); });
+    if (!isOpen) { item.classList.add("open"); q.setAttribute("aria-expanded","true"); }
+  });
+});
+
+/* Before/After slider */
+document.querySelectorAll("[data-ba]").forEach(slider => {
+  const afterImg = slider.querySelector(".after-img");
+  const handle = slider.querySelector(".ba-handle");
+  let dragging = false;
+
+  function setPos(clientX) {
+    const rect = slider.getBoundingClientRect();
+    let pct = ((clientX - rect.left) / rect.width) * 100;
+    pct = Math.max(0, Math.min(100, pct));
+    afterImg.style.clipPath = `inset(0 0 0 ${pct}%)`;
+    handle.style.left = pct + "%";
+  }
+  slider.addEventListener("mousedown", e => { dragging = true; setPos(e.clientX); });
+  window.addEventListener("mousemove", e => { if (dragging) setPos(e.clientX); });
+  window.addEventListener("mouseup", () => dragging = false);
+  slider.addEventListener("touchstart", e => setPos(e.touches[0].clientX));
+  slider.addEventListener("touchmove", e => setPos(e.touches[0].clientX));
+});
+
+/* Option pill selection styling */
+document.querySelectorAll("[data-radio-group]").forEach(group => {
+  const pills = group.querySelectorAll(".option-pill");
+  function refresh() {
+    pills.forEach(p => p.classList.toggle("selected", p.querySelector("input").checked));
+  }
+  pills.forEach(p => p.addEventListener("click", refresh));
+  refresh();
+});
+
+/* ============ MULTI-STEP QUOTE FORM ============ */
+const form = document.getElementById("quoteForm");
+const steps = Array.from(form.querySelectorAll(".form-step"));
+const totalSteps = steps.length;
+let currentStep = 1;
+
+const progressTrack = document.getElementById("progressTrack");
+for (let i = 0; i < totalSteps; i++) {
+  const span = document.createElement("span");
+  progressTrack.appendChild(span);
+}
+function renderProgress() {
+  Array.from(progressTrack.children).forEach((el, i) => {
+    el.classList.toggle("done", i < currentStep);
+  });
+}
+renderProgress();
+
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const submitBtn = document.getElementById("submitBtn");
+
+const requiredFieldsByStep = {
+  1: ["fullName", "email", "phone"],
+  2: ["address"]
+};
+
+function validateStep(stepNum) {
+  const required = requiredFieldsByStep[stepNum] || [];
+  let valid = true;
+  required.forEach(name => {
+    const input = form.querySelector(`[name="${name}"]`);
+    const fieldEl = input.closest(".field");
+    let fieldValid = input.value.trim().length > 0;
+    if (name === "email" && fieldValid) {
+      fieldValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
+    }
+    fieldEl.classList.toggle("invalid", !fieldValid);
+    if (!fieldValid) valid = false;
+  });
+  return valid;
+}
+
+function showStep(n) {
+  steps.forEach(s => s.classList.toggle("active", Number(s.dataset.step) === n));
+  prevBtn.style.visibility = n === 1 ? "hidden" : "visible";
+  nextBtn.style.display = n === totalSteps ? "none" : "inline-flex";
+  submitBtn.style.display = n === totalSteps ? "inline-flex" : "none";
+  currentStep = n;
+  renderProgress();
+}
+
+nextBtn.addEventListener("click", () => {
+  if (!validateStep(currentStep)) return;
+  if (currentStep < totalSteps) showStep(currentStep + 1);
+});
+prevBtn.addEventListener("click", () => {
+  if (currentStep > 1) showStep(currentStep - 1);
+});
+
+/* Mock submission function — structured for easy backend swap.
+   Replace sendQuoteRequest() body with a real call to:
+   email service / Google Sheets / CRM / n8n / Zapier / Make / HubSpot / GoHighLevel */
+async function sendQuoteRequest(payload) {
+  console.log("Quote request payload (demo — not sent anywhere yet):", payload);
+  // Example future integration:
+  // return fetch("/api/quote-request", {
+  //   method: "POST",
+  //   headers: { "Content-Type": "application/json" },
+  //   body: JSON.stringify(payload)
+  // });
+  return new Promise(resolve => setTimeout(resolve, 900));
+}
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  if (!validateStep(1) ) { showStep(1); return; }
+  if (!validateStep(2)) { showStep(2); return; }
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending your request…";
+
+  const fd = new FormData(form);
+  const payload = {
+    fullName: fd.get("fullName"),
+    email: fd.get("email"),
+    phone: fd.get("phone"),
+    address: fd.get("address"),
+    propertyType: fd.get("propertyType"),
+    bedrooms: fd.get("bedrooms"),
+    bathrooms: fd.get("bathrooms"),
+    sqft: fd.get("sqft"),
+    service: fd.get("service"),
+    frequency: fd.get("frequency"),
+    preferredDate: fd.get("prefDate"),
+    preferredTime: fd.get("time"),
+    addOns: fd.getAll("addons"),
+    notes: fd.get("notes"),
+    submittedAt: new Date().toISOString()
+  };
+
+  try {
+    await sendQuoteRequest(payload);
+    form.style.display = "none";
+    progressTrack.style.display = "none";
+    document.getElementById("formSuccess").style.display = "block";
+  } catch (err) {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Get My Free Quote";
+    alert("Something went wrong sending your request. Please try again or call us directly.");
+  }
+});
+
+/* ZIP check (demo — no backend) */
+document.getElementById("zipForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const zip = document.getElementById("zipInput").value.trim();
+  if (!zip) return;
+  window.location.hash = "quote";
+});
+</script>
+</body>
+</html>
